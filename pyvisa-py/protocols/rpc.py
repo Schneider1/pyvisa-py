@@ -254,9 +254,7 @@ class Client(object):
             result = unpack_func()
         else:
             result = None
-        # N.B. Some devices may pad responses beyond RFC 1014 4-byte
-        #   alignment, so skip self.unpacker.done() call here which
-        #   would raise an exception in that case.  See issue #225.
+        self.unpacker.done()
         return result
 
     def start_call(self, proc):
