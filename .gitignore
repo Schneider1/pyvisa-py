@@ -9,7 +9,7 @@ build/
 dist/
 MANIFEST
 .tox
-.eggs
+.coveragerc
 # WebDAV file system cache files
 .DAV/
 _test/

@@ -1,27 +1,32 @@
 # -*- coding: utf-8 -*-
+
+from __future__ import (division, unicode_literals, print_function,
+                        absolute_import)
+
 import os
 
 import unittest
 
 
-# Set the environment variable to use PyVISA-py as backend
-os.environ["PYVISA_LIBRARY"] = "@py"
-
-
 def testsuite():
-    """A testsuite that has all the pyvisa-py tests."""
+    """A testsuite that has all the pyvisa tests.
+    """
     return unittest.TestLoader().discover(os.path.dirname(__file__))
 
 
 def main():
-    """Runs the testsuite as command line application."""
+    """Runs the testsuite as command line application.
+    """
     try:
         unittest.main()
     except Exception as e:
-        print("Error: %s" % e)
+        print('Error: %s' % e)
 
 
-def run() -> unittest.TestResult:
-    """Run all tests.    """
+def run():
+    """Run all tests.
+
+    :return: a :class:`unittest.TestResult` object
+    """
     test_runner = unittest.TextTestRunner()
     return test_runner.run(testsuite())
