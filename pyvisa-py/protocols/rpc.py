@@ -17,9 +17,12 @@
         http://svn.python.org/projects/python/trunk/Demo/rpc/rpc.py
 
 
-    :copyright: 2014-2020 by PyVISA-py Authors, see AUTHORS for more details.
+    :copyright: 2014 by PyVISA-py Authors, see AUTHORS for more details.
     :license: MIT, see LICENSE for more details.
 """
+
+from __future__ import (division, unicode_literals, print_function,
+                        absolute_import)
 
 import sys
 import enum
@@ -27,7 +30,8 @@ import xdrlib
 import socket
 import select
 import time
-import struc
+
+from pyvisa.compat import struct
 
 from ..common import logger
 

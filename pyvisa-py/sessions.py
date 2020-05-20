@@ -6,9 +6,13 @@
     Base Session class.
 
 
-    :copyright: 2014-2020 by PyVISA-py Authors, see AUTHORS for more details.
+    :copyright: 2014-2018 by PyVISA-py Authors, see AUTHORS for more details.
     :license: MIT, see LICENSE for more details.
 """
+
+from __future__ import (division, unicode_literals, print_function,
+                        absolute_import)
+
 import abc
 import time
 
@@ -40,7 +44,7 @@ class UnknownAttribute(Exception):
     __repr__ = __str__
 
 
-class Session(metaclass=abc.ABCMeta):
+class Session(compat.with_metaclass(abc.ABCMeta)):
     """A base class for Session objects.
 
     Just makes sure that common methods are defined and information is stored.
